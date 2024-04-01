@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme</title>
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+
+    span {
+      color: red;
+      font-size: 46px;
+      display: block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button>Toogle Theme</button>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem laborum nostrum ducimus cum blanditiis a provident vero soluta rem repudiandae qui harum atque impedit, ut, beatae perferendis dolores odit ad.
+    Ut, culpa necessitatibus. Suscipit doloribus, obcaecati necessitatibus a, velit vero iusto laboriosam perferendis hic dolores veritatis dignissimos commodi illo cumque sunt beatae corporis. Officiis eos minus quam eveniet ab amet.
+    Voluptatem eaque maxime non ad autem laboriosam voluptatibus veniam, quam amet deserunt molestiae voluptate aut corrupti cum beatae corporis placeat voluptates pariatur odio ullam quasi harum cupiditate eligendi nemo. Ipsa.
+    Vitae officia deleniti maiores, culpa voluptatibus eius unde quia vel nam eum esse molestiae. Dignissimos non delectus at, omnis tempora, soluta cum, recusandae consequatur iusto ipsa earum nam deleniti tenetur?
+    Repellat tempora deleniti laboriosam, quibusdam dolorem explicabo illo ipsa officiis, maxime ipsum harum iste quis. Praesentium dolorum corrupti dolor ut, provident amet ad modi accusamus labore tenetur delectus quibusdam dolores.
+    Porro vel debitis doloremque, adipisci cupiditate pariatur suscipit quas a excepturi ducimus praesentium, consequatur nostrum temporibus, distinctio minima aperiam amet ut voluptatibus impedit dolores aut voluptas. Asperiores aperiam eveniet nostrum.
+    Totam dignissimos porro ipsum ea praesentium architecto laborum ducimus ad! Veritatis quo iusto accusamus sapiente iure eaque nostrum possimus tenetur officia. Voluptates dignissimos expedita odit! Quos voluptatum ullam distinctio beatae.
+    Consequuntur ullam aut consequatur praesentium maxime! Magnam beatae possimus ut nulla, laborum provident impedit corrupti eos, saepe ipsum blanditiis dicta in iure veritatis soluta. Repudiandae vitae impedit a. Sint, temporibus.
+    Labore aspernatur ullam, quas voluptas perspiciatis quibusdam recusandae earum non nisi, aut quidem placeat commodi. Eum laudantium, dolorem, quisquam temporibus architecto expedita at molestiae, nisi necessitatibus atque et debitis reprehenderit.
+    Reprehenderit enim sequi explicabo quisquam debitis aspernatur. Illo delectus repudiandae ab nam exercitationem? Eaque at magni reprehenderit molestias quia pariatur maxime harum. Id obcaecati commodi, vitae quas a praesentium ad?
+    Eligendi ipsam quam facilis explicabo blanditiis architecto molestiae facere quibusdam ad. Provident et culpa est, dolore modi dignissimos distinctio delectus atque labore odit dolor sit asperiores impedit facilis a consectetur!
+    Excepturi doloribus omnis, optio autem laborum exercitationem atque, modi recusandae corporis itaque voluptatem dicta culpa voluptatibus rem corrupti, aspernatur saepe quia consequatur eaque sint voluptate eos. Saepe voluptatum ipsam quo.
+    Maxime maiores eligendi eius hic velit vitae fugiat, odio nemo odit natus iste omnis quidem mollitia ea repudiandae eum minima magnam voluptatum inventore? Aspernatur quod ad adipisci doloremque saepe similique.
+    Beatae doloremque doloribus qui, corrupti pariatur cupiditate praesentium necessitatibus omnis, velit inventore alias odio aliquid esse! Quae tempore sapiente eligendi laborum deleniti. Quae reprehenderit mollitia necessitatibus sunt corrupti optio blanditiis.
+    Sint autem error explicabo eum modi non eveniet fugit nobis ad. Veritatis dolorum accusantium officiis, consectetur nesciunt sint et quasi omnis aliquam blanditiis numquam reprehenderit fugit modi. Eius, qui repellat.
+    Repellendus, velit amet est quidem temporibus possimus adipisci ad eaque distinctio illum hic tenetur quaerat sint quis facere perferendis eum illo culpa inventore facilis laboriosam. Alias provident odio officiis praesentium!
+    Assumenda ipsam provident, harum consectetur sapiente suscipit amet, voluptas id cum vero quis quasi sint incidunt necessitatibus earum tempora vel vitae, exercitationem expedita ex iure rerum architecto? Quis, culpa nostrum.
+    Doloribus minima odio pariatur quasi laborum, dolorem quaerat voluptas iusto nemo, quod officiis veniam! Magni distinctio repellat dolor a vel, sapiente minus, fuga nostrum illum alias impedit officia quam ullam?
+    Aperiam, veritatis rem voluptates cumque similique reiciendis modi dicta fugit esse, id aliquid debitis. Veniam fugit fuga maiores odio. Qui similique in molestias asperiores dolor sint fugiat optio enim commodi?
+    Veritatis repellendus totam mollitia maxime inventore labore laudantium quasi animi vel, esse non a accusamus hic perferendis in corporis maiores dignissimos repudiandae accusantium consequatur itaque blanditiis neque? Facere, hic repellat!
+  </p>
+
+  <script>
+    let isDark = true;
+    const body = document.querySelector("body");
+    const btn = document.querySelector("button");
+    const p = document.querySelector("p");
+
+    btn.addEventListener('click', () => {
+      if (isDark) {
+        body.style.backgroundColor = "white";
+        body.style.color = "black";
+      } else {
+        body.style.backgroundColor = "black";
+        body.style.color = "white";
+      }
+      isDark = !isDark;
+    })
+
+    p.addEventListener('mouseover', () => {
+      p.classList.add('hidden');
+      const warning = document.createElement('span');
+      warning.textContent = "Please Don't Read me!!!";
+      body.appendChild(warning);
+    })
+
+    p.addEventListener('mouseout', () => {
+      p.classList.remove('hidden');
+      const warningSpans = document.querySelectorAll('span');
+      for (let i = 0; i < warningSpans.length; i++) {
+        body.removeChild(warningSpans[i])
+      }
+    })
+  </script>
+</body>
+</html>

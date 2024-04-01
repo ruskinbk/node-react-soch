@@ -1,0 +1,43 @@
+<!-- DOM manipulation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM manipulation</title>
+
+  <style>
+    span {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <p class="weather">Today is <span>raniy.</span></p>
+
+  <button onclick="changeToYesterday()">Show yesterday</button>
+
+  <script>
+    let isToday = true;
+    let weather = "raniy";
+    const weatherP = document.querySelector("p");
+    const btn = document.querySelector("button");
+    // btn.addEventListener('click', changeToYesterday);
+
+    // weatherP.textContent = "Yesterday was sunny";
+    function changeToYesterday() {
+      weatherP.innerHTML = isToday ? "Yesterday was <span>sunny.</span>" : "Today is <span>rainy.</span>"; 
+      btn.innerHTML = isToday ? "Show today" : "Show yesterday"; 
+      // if (isToday) {
+      //   weatherP.innerHTML = "Yesterday was <span>sunny.</span>";
+      //   btn.textContent = "Show today";
+      //   isToday = !isToday;
+      //   return;
+      // } 
+      // weatherP.innerHTML = "Today is <span>rainy.</span>";
+      // btn.textContent = "Show Yesterday";
+      isToday = !isToday;
+    }
+  </script>
+</body>
+</html>
