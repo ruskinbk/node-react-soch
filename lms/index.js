@@ -1,18 +1,16 @@
 const express = require('express');
-const httpStatus = require('http-status');
 const app = express();
+
+const routes = require('./routes');
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.status(httpStatus.OK).json({ message: "Welcome to LMS application" });
-});
-
-app.get('/hello', (req, res) => {
-  res.status(httpStatus.BAD_REQUEST).json({
-    message: "Error has occured"
-  });
-});
+// app.get('/health', (req, res) => {
+//   res.json({
+//     status: 'ok',
+//   });
+// })
+app.use('/api', routes);
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
