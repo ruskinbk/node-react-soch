@@ -1,29 +1,46 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, } from 'react';
 import Button from './components/Button';
-// useState, useEffect
+import ThemeProvider from './context/ThemeContext';
+import InputField from './components/InputField';
 
-// always starts with use
-// can only be used inside component or custom hook
-
-const App = () => {
+const App = () => {  
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
-    console.log('This is from use effect');
+    console.log("THis is useEffect");
   }, []);
-  
+
   return (
-    <>
-      <h1>Hello</h1>
+    <ThemeProvider>
+      <InputField label="Password" />
       <p>Count  is {count}</p>
       <Button 
-        label="Hello" 
+        label="Increment" 
         onClick={() => {
           setCount(count + 1);
         }} 
       />
-    </>
+      <Button 
+        label="Decrement" 
+        onClick={() => {
+          setCount(count - 1);
+        }} 
+      />
+    </ThemeProvider>
   );
 }
+
+
+// JSX
+// looks like HTML but it's not
+// use {} to have js inside JSX
+// attribute camelCase
+
+// Components
+// function
+// returns jsx element
+// single rooted jsx element
+
+// hooks
 
 export default App;
